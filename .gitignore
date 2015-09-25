@@ -17,7 +17,7 @@ node_modules/
 # bower files
 
 .bower-*/
-bower_components
+/public/assets/libs/
 
 # module files 
 
