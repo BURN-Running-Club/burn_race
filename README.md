@@ -53,20 +53,14 @@ bower install
 Run the server with nodemon
 
 
-It may complain missing packages. Install all of them and save to package.json with the --save option, 
-so that other programmer will only need to run npm install. For example:
-
-```
-Error: Cannot find module 'jsonwebtoken'.
-
-npm install jsonwebtoken --save
-```
-
 * Compile frontend assets, etc.
 
 We use gulp to do several tasks, including 
+
 1. generate final app.css from multiple less files
+
 2. check js to make sure good coding style
+
 3. generate final app.js from multiple js files
 etc.
 
