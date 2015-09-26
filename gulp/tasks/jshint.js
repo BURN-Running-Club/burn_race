@@ -3,7 +3,7 @@ var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var handleErrors = require('../utils/handleErrors');
 
-var files = './public/assets/js/*.js';
+var files = './client/public/js/*.js';
 
 gulp.task('jshint', function(){
     return gulp.src(files)

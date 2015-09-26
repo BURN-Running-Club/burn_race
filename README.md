@@ -56,11 +56,8 @@ Run the server with nodemon
 * Compile frontend assets, etc.
 
 We use gulp to do several tasks, including 
-
 1. generate final app.css from multiple less files
-
 2. check js to make sure good coding style
-
 3. generate final app.js from multiple js files
 etc.
 

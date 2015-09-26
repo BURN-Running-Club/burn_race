@@ -5,7 +5,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var handleErrors = require('../utils/handleErrors');
 var minify = require('gulp-minify-css');
 
-var dir = './public/assets',
+var dir = './client/public',
 	src = dir + '/css/*.less',
 	dest = dir + '/css';
 

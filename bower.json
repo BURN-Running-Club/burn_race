@@ -6,7 +6,7 @@
   "homepage": "http://race.burnrunning.org/",
   "license": "MIT",
   "author": "Burn Runners",
-  "directory" : "public/assets/libs/",
+  "directory" : "client/assets/libs/",
   "dependencies": {
     "bootstrap": "~3",
     "angular": "~1.3",
