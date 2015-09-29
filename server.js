@@ -38,7 +38,7 @@ app.get('/api/name', api.name);
 
 // Index and view partials
 app.get('/', routes.index);
-// app.get('/partials/:name', routes.partials);
+app.get('/partials/:name', routes.partials);
 
 /* Start server */
 app.listen(config.port);

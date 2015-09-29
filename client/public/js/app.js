@@ -10,9 +10,3 @@ var app = angular.module('race', [
 	'race.directives'
 ]);
 
-app.controller('AppController', ['$router', AppController]);
-
-AppController.$routeConfig = [
-	{ path: '/partials/:name', component: 'partials' }
-];
-function AppController ($router) {}

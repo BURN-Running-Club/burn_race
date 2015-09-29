@@ -6,4 +6,11 @@ angular.module('race.directives', [])
     return function(scope, elm, attrs) {
         elm.text(version);
     };
-});
+})
+.directive('raceSection', function() {
+	return {
+		templateUrl: function(element, attr) {
+			return '/partials/' + attr.section ;
+		}
+	}
+})
