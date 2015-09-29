@@ -14,8 +14,7 @@ insert_final_newline = true
 # Standard at: https://github.com/felixge/node-style-guide 
 [**.js, **.json]
 trim_trailing_whitespace = true
-indent_style = space
-indent_size = 2
+indent_style = tab
 quote_type = single
 curly_bracket_next_line = false
 spaces_around_operators = true
@@ -31,7 +30,7 @@ indent_style = tab
 [**.html]
 trim_trailing_whitespace = true
 indent_style = space
-indent_size = 2
+indent_size = 4
 
 # No standard.  Please document a standard if different from .js
 [**.md]
@@ -41,8 +40,8 @@ indent_style = tab
 [Makefile]
 indent_style = tab
 
-# The indentation in package.json will always need to be 2 spaces
+# The indentation in package.json will always need to be 4 spaces
 # https://github.com/npm/npm/issues/4718
 [package.json, bower.json]
 indent_style = space
-indent_size = 2
+indent_size = 4

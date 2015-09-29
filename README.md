@@ -1,13 +1,10 @@
 # BURN RACE
 
-Building new burn race website and webapps with mean.io. http://mean.io/. This
-is a fullstack javascript framework with Mongodb, Express, Angularjs, Nodejs.
+Building new burn race website and webapps with MEAN system, Mongo, Express, Angularjs, and Nodejs. 
 
-For local installation please refer to original README.mean.md. 
+## Installation
 
-## Installation (OS and Linux)
-
-* Install framework dependencies
+### Install framework dependencies
 
 The best to install node is through nvm. The OS maintained packages (through brew or 
 apt-get) is very outdated, and not easy to specify node version.
@@ -20,7 +17,7 @@ npm install -g nodemon
 npm install -g bower
 ```
 
-* Create local mongodb database and user
+### Local mongodb database and user
 
 ```
 brew install mongodb (Mac)
@@ -28,7 +25,16 @@ or
 apt-get install mongodb (Ubuntu)
 ```
 
-start mongodb, create users according to what we need in config.js
+* Start mongodb on Mac:
+
+```
+ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
+// auto start mongodb at login
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
+```
+
+* Create user and db.
+
 ```
 mongo
 use burn-race
@@ -41,35 +47,15 @@ db.createUser(
 )
 ```
 
-* Install burn race packages
+## Let's BURN it.
 
 ```
 git clone github.com/BURN-Running-Club/burn_race burn_race
 cd burn_race
 npm install
 bower install
-```
 
-Run the server with nodemon
-
-
-* Compile frontend assets, etc.
-
-We use gulp to do several tasks, including 
-1. generate final app.css from multiple less files
-2. check js to make sure good coding style
-3. generate final app.js from multiple js files
-etc.
-
-Before loading page, please run gulp manually. We will automate it later.
-
-```
 gulp
-```
-
-* Start the server
-
-```
 nodemon 
 ```
 
@@ -77,3 +63,4 @@ Once all packages are installed, you can visit your homepage at
 http://localhost:8100
 
 
+## Plans and code designs.
