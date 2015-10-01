@@ -1,9 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <title>YOUR ARE THE BEST! | BURN WITH US</title>
     <base href="/">
-    <title>You Are The Best!</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="BURN,BURN Running,race,5k,half marathon">
+    <meta name="description" content="Burnrunning Club first race.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta property="og:image" content="images/logo.png" />
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="image_src" href="http://race.burnrunning.org/images/logo.png" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/burn.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.1.0/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.9/jquery.touchSwipe.min.js"></script>
+    <script type="text/javascript" src="js/burn-race.js"></script>
+
     <!-- we'll combine these later into vender.bundle.min.js-->
     <script src="libs/angular/angular.js"></script>
     <script src="libs/angular-new-router/dist/router.es5.min.js"></script>
@@ -16,9 +32,16 @@
 </head>
 <body ng-app="race" ng-controller="raceController">
     <div class="view-container">
-        <h1>index</h1>
-        <race-section section="header"></race-section>
         <race-section section="home"></race-section>
+        <race-section section="info"></race-section>
+        <race-section section="race-day"></race-section>
+        <race-section section="course"></race-section>
+        <race-section section="shirt"></race-section>
+        <race-section section="faq"></race-section>
+        <race-section section="about-us"></race-section>
+        <race-section section="contact-us"></race-section>
+        <race-section section="sponsors"></race-section>
+        <race-section section="footer"></race-section>
     </div>
 </body>
 </html>
