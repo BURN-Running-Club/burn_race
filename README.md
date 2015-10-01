@@ -64,3 +64,19 @@ http://localhost:8100
 
 
 ## Plans and code designs.
+
+### TODO list
+
+Once finished, just note it here with commit. 
+
+* UI captcha
+
+Used to use php to generate captcha image. We can use angularjs captcha.
+
+* mailer
+
+Used to use php to send mail. We need to use nodejs here.
+
+* race result
+
+Need UI design and mongodb solutions.
