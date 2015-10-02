@@ -1,7 +1,9 @@
 'use strict';
+
 /* Controllers */
-angular.module('race.controllers', [])
-.controller('raceController', function($scope, $http) {
+var app = angular.module('race.controllers', ['timer']);
+
+app.controller('raceController', function($scope, $http) {
     $http({
         method: 'GET',
         url: '/api/name'
@@ -12,4 +14,10 @@ angular.module('race.controllers', [])
     error(function(data, status, headers, config) {
         $scope.name = 'Error!';
     });
+
 });
+
+app.controller('timerController', ['$scope', function ($scope) {
+    $scope.endTime = 1444465800;
+}]);
+
