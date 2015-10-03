@@ -5,8 +5,8 @@ var express = require('express'),
 	morgan = require('morgan'),
 	mongoose = require('mongoose'),
 	config = require('./config'),
-	api = require('./client/app/routes/api'),
-	routes = require('./client/app/routes');
+	api = require('./client/routes/api'),
+	routes = require('./client/routes');
 
 /* Server side */
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,17 +30,17 @@ mongoose.connect(config.database);
 app.set('views', __dirname + '/client');
 app.set('view engine', 'ejs');
 
-// Static files
-app.use(express.static(path.join(__dirname, '/client/public')));
-
 // JSON API
 app.get('/api/name', api.name);
 
+// Static files
+app.use(express.static(path.join(__dirname, '/client')));
+
 // Index and view partials
 app.get('/', routes.index);
+app.get('/component/:component', routes.components);
 app.get('/test', routes.test); 
-// TODO: get rid of this, should be hidden from public
-app.get('/app/coyote-hills/:name', routes.races);
+
 
 /* Start server */
 app.listen(config.port);
