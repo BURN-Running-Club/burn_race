@@ -5,8 +5,8 @@ var express = require('express'),
 	morgan = require('morgan'),
 	mongoose = require('mongoose'),
 	config = require('./config'),
-	api = require('./client/routes/api'),
-	routes = require('./client/routes');
+	api = require('./client/app/routes/api'),
+	routes = require('./client/app/routes');
 
 /* Server side */
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,7 +27,7 @@ app.use(function(req, res, next) {
 mongoose.connect(config.database);
 
 /* UI */
-app.set('views', __dirname + '/client/views');
+app.set('views', __dirname + '/client');
 app.set('view engine', 'ejs');
 
 // Static files
@@ -38,8 +38,10 @@ app.get('/api/name', api.name);
 
 // Index and view partials
 app.get('/', routes.index);
-app.get('/partials/:name', routes.partials);
+app.get('/test', routes.test); 
+// TODO: get rid of this, should be hidden from public
+app.get('/app/coyote-hills/:name', routes.races);
 
 /* Start server */
 app.listen(config.port);
-console.log('Burn race server started on port 8100.');
+console.log('Burn race server started on port ' + config.port);

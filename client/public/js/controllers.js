@@ -1,9 +1,9 @@
 'use strict';
 
 /* Controllers */
-var app = angular.module('race.controllers', ['timer']);
+var app = angular.module('race.controllers', []);
 
-app.controller('raceController', function($scope, $http) {
+app.controller('RaceController', function($scope, $http) {
     $http({
         method: 'GET',
         url: '/api/name'
@@ -17,7 +17,24 @@ app.controller('raceController', function($scope, $http) {
 
 });
 
-app.controller('timerController', ['$scope', function ($scope) {
-    $scope.endTime = 1444465800;
+app.controller('CountdownController', ['$scope', function ($scope) {
+    $scope.eventDate = new Date("October 10, 2015 8:30:00");
+
+    var updateClock = function(){
+        $scope.seconds = ($scope.eventDate - new Date()) / 1000;
+
+        $scope.countdown = {
+            days: ('0' + parseInt($scope.seconds / 86400 )).slice(-2),
+            hours: ('0' + parseInt($scope.seconds % 86400 / 3600 )).slice(-2),
+            minutes: ('0' + parseInt($scope.seconds % 86400 % 3600 / 60 )).slice(-2),
+            seconds: ('0' + parseInt($scope.seconds % 86400 % 3600 % 60 )).slice(-2)
+        };
+    };
+
+    setInterval(function(){
+        $scope.$apply(updateClock);
+    }, 1000);
+
+    updateClock();
 }]);
 

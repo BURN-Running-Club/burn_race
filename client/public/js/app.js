@@ -2,7 +2,7 @@
 
 /* Declare app level module which depends on filters, and services */
 
-var app = angular.module('race', [
+var app = angular.module('Race', [
 	'ngNewRouter',
 	'race.controllers',
 	'race.filters',

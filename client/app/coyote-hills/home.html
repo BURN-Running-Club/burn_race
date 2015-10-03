@@ -26,21 +26,21 @@
 			</div>
 		</div>
 	</div>
-    <div class="countdown row">
+    <div ng-controller="CountdownController" class="countdown row">
         <div>
-            <timer end-time="1444491000000">{{days}}</timer>
+            <div>{{countdown.days}}</div>
             <div class="unit">Days</div>
         </div>
         <div>
-            <timer end-time="1444491000000">{{hours}}</timer>
+            <div>{{countdown.hours}}</div>
             <div class="unit">Hours</div>
         </div>
         <div>
-            <timer end-time="1444491000000">{{minutes}}</timer>
+            <div>{{countdown.minutes}}</div>
             <div class="unit">Minutes</div>
         </div>
         <div>
-            <timer end-time="1444491000000">{{seconds}}</timer>
+            <div>{{countdown.seconds}}</div>
             <div class="unit">Seconds</div>
         </div>
     </div>
