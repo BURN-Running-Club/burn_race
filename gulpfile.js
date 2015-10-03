@@ -5,4 +5,4 @@ var requireDir = require('require-dir');
 
 requireDir('./gulp/tasks/');
 
-gulp.task('default', ['less', 'jshint']);
+gulp.task('default', ['less', 'js']);

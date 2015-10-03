@@ -1,9 +1,9 @@
-var gulp = require('gulp');
-var jshint = require('gulp-jshint');
-var stylish = require('jshint-stylish');
-var handleErrors = require('../utils/handleErrors');
+var gulp = require('gulp'),
+	jshint = require('gulp-jshint'),
+	stylish = require('jshint-stylish'),
+	handleErrors = require('../utils/handleErrors'),
 
-var files = './client/public/js/*.js';
+	files = 'client/js/*.js';
 
 gulp.task('jshint', function(){
     return gulp.src(files)

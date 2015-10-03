@@ -1,3 +1,18 @@
+(function(){
+	'use strict';
+
+	/* Declare app level module which depends on filters, and services */
+
+	var app = angular.module('race', [
+		'ngNewRouter',
+		'race.controllers',
+		'race.filters',
+		'race.services',
+		'race.directives',
+		'race.components'
+		]);
+})();
+
 (function($) {
     $(document).ready(function() {
         /* carousel */
@@ -85,3 +100,97 @@
         });
     };
 })(jQuery);
+
+(function() {
+    'use strict';
+
+    /* Controllers */
+    var app = angular.module('race.controllers', []);
+
+    app.controller('raceController', function($scope, $http) {
+        $http({
+            method: 'GET',
+            url: '/api/name'
+        }).
+        success(function(data, status, headers, config) {
+            $scope.name = data.name;
+        }).
+        error(function(data, status, headers, config) {
+            $scope.name = 'Error!';
+        });
+    });
+})();
+
+(function() {
+	'use strict';
+
+	/* Directives */
+	var app = angular.module('race.components', []);
+
+	app.directive('appVersion', function(version) {
+		return function(scope, elm, attrs) {
+			elm.text(version);
+		};
+	});
+
+	app.directive('raceSection', function() {
+		return {
+			templateUrl: function(element, attr) {
+				return 'pages/' + attr.race + '/' + attr.template;
+			}
+		};
+	});
+})();
+
+(function() {
+	'use strict';
+
+	/* Filters */
+
+	angular.module('race.filters', [])
+	.filter('interpolate', function (version) {
+		return function (text) {
+			return String(text).replace(/\%VERSION\%/mg, version);
+		};
+	});
+})();
+
+(function(){
+	'use strict';
+
+	/* Services */
+	angular.module('race.services', []) 
+	.value('version', '0.1');
+})();
+
+var app = angular.module('race.directives', [])
+
+app.controller('CountdownController', ['$scope', function ($scope) {
+    $scope.eventDate = new Date("October 10, 2015 8:30:00");
+
+    var updateClock = function(){
+        $scope.seconds = ($scope.eventDate - new Date()) / 1000;
+
+        $scope.countdown = {
+            days: ('0' + parseInt($scope.seconds / 86400 )).slice(-2),
+            hours: ('0' + parseInt($scope.seconds % 86400 / 3600 )).slice(-2),
+            minutes: ('0' + parseInt($scope.seconds % 86400 % 3600 / 60 )).slice(-2),
+            seconds: ('0' + parseInt($scope.seconds % 86400 % 3600 % 60 )).slice(-2)
+        };
+    };
+
+    setInterval(function(){
+        $scope.$apply(updateClock);
+    }, 1000);
+
+    updateClock();
+}]);
+
+
+app.directive('countdown', function(){
+	return {
+		templateUrl: function(){ 
+            return '/components/countdown/countdown.html'
+        }
+	}
+});

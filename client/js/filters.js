@@ -1,10 +1,12 @@
-'use strict';
+(function() {
+	'use strict';
 
-/* Filters */
+	/* Filters */
 
-angular.module('race.filters', [])
-.filter('interpolate', function (version) {
-	return function (text) {
-		return String(text).replace(/\%VERSION\%/mg, version);
-	};
-});
+	angular.module('race.filters', [])
+	.filter('interpolate', function (version) {
+		return function (text) {
+			return String(text).replace(/\%VERSION\%/mg, version);
+		};
+	});
+})();
